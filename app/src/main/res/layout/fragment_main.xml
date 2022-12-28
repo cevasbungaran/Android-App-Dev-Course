@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_menu_pengumuman"
+                android:layout_width="@dimen/btn_size_main_fragment_width"
+                android:layout_height="@dimen/btn_size_main_fragment_height"
+                android:text="@string/pengumuman_title"
+                android:layout_marginRight="@dimen/margin_btn_main_fragment"
+                android:backgroundTint="@color/biruIF"
+                android:textColor="@color/birutuaIF"/>
+
+            <Button
+                android:id="@+id/btn_menu_pertemuan"
+                android:layout_width="@dimen/btn_size_main_fragment_width"
+                android:layout_height="@dimen/btn_size_main_fragment_height"
+                android:text="@string/pertemuan_title"
+                android:layout_marginLeft="@dimen/margin_btn_main_fragment"
+                android:backgroundTint="@color/biruIF"
+                android:textColor="@color/birutuaIF"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_btn_main_fragment">
+
+            <Button
+                android:id="@+id/btn_menu_frs"
+                android:layout_width="@dimen/btn_size_main_fragment_width"
+                android:layout_height="@dimen/btn_size_main_fragment_height"
+                android:text="@string/frs_title"
+                android:layout_marginRight="@dimen/margin_btn_main_fragment"
+                android:backgroundTint="@color/biruIF"
+                android:textColor="@color/birutuaIF"/>
+
+            <Button
+                android:id="@+id/btn_menu_pengaturan"
+                android:layout_width="@dimen/btn_size_main_fragment_width"
+                android:layout_height="@dimen/btn_size_main_fragment_height"
+                android:text="@string/pengaturan_title"
+                android:layout_marginLeft="@dimen/margin_btn_main_fragment"
+                android:backgroundTint="@color/biruIF"
+                android:textColor="@color/birutuaIF"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

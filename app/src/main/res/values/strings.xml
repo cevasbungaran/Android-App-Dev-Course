@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Tubes IF APPS</string>
+
+    <!-- Main Fragment   -->
+    <string name="tv_main_title">IF APPS</string>
+    <string name="tv_main_subtitle">Dari IF Unpar, Oleh IF Unpar, Untuk IF Unpar</string>
+    <string name="btn_main_title">Login</string>
+
+    <!-- Left Fragment   -->
+    <string name="pengumuman_title">Pengumuman</string>
+    <string name="pertemuan_title">Pertemuan</string>
+    <string name="frs_title">Isi FRS</string>
+    <string name="pengaturan_title">Pengaturan</string>
+    <string name="signout_title">Sign Out</string>
+
+    <!-- Tambah_Dokter Fragment   -->
+    <string name="tv_tambah_title">Tambah Dokter</string>
+    <string name="tv_tambah_spesial">Spesialisasi</string>
+
+    <!-- Pertemuan Fragment   -->
+    <string name="tv_pertemuan_title">Pertemuan</string>
+    <string name="tv_pertemuan_nama">Nama</string>
+    <string name="tv_pertemuan_dokter">Dokter</string>
+    <string name="tv_pertemuan_keluhan">Keluhan</string>
+    <string name="tv_pertemuan_tanggal">Tanggal</string>
+    <string name="tv_pertemuan_waktu">Waktu</string>
+    <string name="et_hint_nama">Masukkan Nama Anda</string>
+    <string name="et_hint_keluhan">Masukkan Keluhan Anda</string>
+    <string name="et_hint_tanggal">Pilih Tanggal Pertemuan</string>
+    <string name="et_hint_waktu">Pilih Waktu Pertemuan</string>
+    <string name="btn_tambah_pertemuan">BUAT PERTEMUAN</string>
+
+    <!-- Tambah Pertemuan Fragment   -->
+    <string name="tv_tambah_pertemuan_title">Tambah Pertemuan</string>
+    <string name="tv_judul_pertemuan">Judul</string>
+    <string name="tv_jadwal_pertemuan">Jadwal</string>
+    <string name="tv_partisipan_pertemuan">Partisipan</string>
+    <string name="btn_jadwal_dosen_pertemuan">Lihat Jadwal Dosen</string>
+    <string name="btn_simpan_pertemuan">Simpan</string>
+    <string name="tv_deskripsi_pertemuan">Deskripsi</string>
+
+    <!-- Jadwal Dosen -->
+    <string name="tv_jadwal_dosen_title">Jadwal Dosen</string>
+    <string name="btn_list_dokter">+</string>
+
+    <!-- Toolbar   -->
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
+
+    <!-- Pramatkul -->
+    <string name="fragment_pramatkul_title">FRS</string>
+    <string name="fragment_tambah_matkul_title">Tambah</string>
+    <string name="fragment_tambah_matkul_prasyarat">Prasyarat</string>
+    <string name="fragment_tambah_matkul_btn_ambil">Ambil</string>
+</resources>

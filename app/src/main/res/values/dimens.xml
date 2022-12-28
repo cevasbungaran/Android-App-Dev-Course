@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_title">30sp</dimen>
+    <dimen name="size_form">20sp</dimen>
+    <dimen name="margin">25sp</dimen>
+    <dimen name="margin_form">35sp</dimen>
+    <dimen name="btn_list_dokter">50dp</dimen>
+    <dimen name="margin_list_dokter">50dp</dimen>
+    <dimen name="btn_text_list_dokter">20dp</dimen>
+    <dimen name="btn_size_main_fragment_width">150dp</dimen>
+    <dimen name="btn_size_main_fragment_height">50dp</dimen>
+    <dimen name="margin_btn_main_fragment">10sp</dimen>
+</resources>

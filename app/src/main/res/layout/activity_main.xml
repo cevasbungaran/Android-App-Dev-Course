@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fragment_container"/>
+
+        <!--        <fragment-->
+        <!--            android:id="@+id/fragment_main"-->
+        <!--            android:name="com.example.tubes1.MainFragment"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"/>-->
+
+        <!--        <fragment-->
+        <!--            android:id="@+id/fragment_daftar"-->
+        <!--            android:name="com.example.tubes1.DaftarFragment"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"/>-->
+
+        <!--        <fragment-->
+        <!--            android:id="@+id/fragment_tambah"-->
+        <!--            android:name="com.example.tubes1.TambahFilmFragment"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"/>-->
+
+    </LinearLayout>
+
+    <!-- Left Drawer -->
+\
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

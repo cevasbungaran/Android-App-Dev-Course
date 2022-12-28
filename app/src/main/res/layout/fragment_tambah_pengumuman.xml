@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Pengumuman"
+        android:id="@+id/tv_title_tambah_pengumuman"
+        android:textSize="@dimen/size_title"
+        android:textColor="@color/birutuaIF"
+        android:layout_margin="@dimen/margin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_judul_pengumuman"
+        android:text="@string/tv_judul_pertemuan"
+        android:textSize="@dimen/size_form"
+        android:layout_below="@+id/tv_title_tambah_pengumuman"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_tambah_pengumuman"
+        android:layout_below="@id/tv_judul_pengumuman"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_tags_pengumuman"
+        android:text="Tags"
+        android:textSize="@dimen/size_form"
+        android:layout_below="@+id/et_tambah_pengumuman"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_tags_pengumuman"
+        android:layout_below="@id/tv_tags_pengumuman"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_deskripsi_pertemuan"
+        android:text="@string/tv_deskripsi_pertemuan"
+        android:textSize="@dimen/size_form"
+        android:layout_below="@+id/et_tags_pengumuman"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/et_deskripsi_pertemuan"
+        android:layout_below="@id/tv_deskripsi_pertemuan"
+        android:layout_above="@id/btn_simpan_pengumuman"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_simpan_pengumuman"
+        android:backgroundTint="@color/biruIF"
+        android:text="@string/btn_simpan_pertemuan"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

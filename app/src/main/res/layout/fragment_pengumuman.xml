@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pengumuman_title"
+        android:id="@+id/tv_title_pengumuman"
+        android:textSize="@dimen/size_title"
+        android:textColor="@color/birutuaIF"
+        android:layout_margin="@dimen/margin"/>
+
+    <ImageView
+        android:id="@+id/filter_sym"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/tv_title_pengumuman"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/filter_sym" />
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_box_pengumuman"
+        android:layout_below="@id/tv_title_pengumuman"
+        android:layout_toRightOf="@id/filter_sym"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lst_pengumuman"
+        android:layout_below="@id/search_box_pengumuman"
+        android:layout_above="@id/btn_new_pengumuman"/>
+
+    <Button
+        android:id="@+id/btn_new_pengumuman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/biruIF"
+        android:textColor="@color/birutuaIF"
+        android:text="Buat Pengumuman"/>
+
+
+
+
+</RelativeLayout>
