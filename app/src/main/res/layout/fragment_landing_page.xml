@@ -32,5 +32,6 @@
         android:id="@+id/btn_login_main"
         android:backgroundTint="@color/biruIF"
         android:textColor="@color/birutuaIF"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

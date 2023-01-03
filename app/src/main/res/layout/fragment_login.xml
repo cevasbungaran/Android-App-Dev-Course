@@ -18,14 +18,52 @@
         android:id="@+id/et_email_login"
         android:hint="Email Unpar"
         android:layout_marginTop="50dp"
-        android:layout_above="@id/et_password"/>
+        android:layout_below="@+id/logo_if"/>
+
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_password"
         android:hint="Password"
-        android:layout_above="@id/btn_login"/>
+        android:layout_below="@+id/et_email_login"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_login_as"
+        android:layout_below="@+id/et_password"
+        android:text="LOGIN AS: "/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/tv_login_as"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_admin"
+            android:text="Admin"
+            android:textSize="15sp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_dosen"
+            android:text="Dosen"
+            android:textSize="15sp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rb_mahasiswa"
+            android:text="Mahasiswa"
+            android:textSize="15sp"/>
+
+    </RadioGroup>
 
     <Button
         android:layout_width="match_parent"
@@ -35,6 +73,7 @@
         android:backgroundTint="@color/biruIF"
         android:textColor="@color/birutuaIF"
         android:layout_centerInParent="true"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
