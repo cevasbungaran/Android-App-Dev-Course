@@ -1,4 +1,5 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
+import com.example.tugasifapps2.Presenter.PresenterUser;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,19 +10,20 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.tugasifapps2.databinding.FragmentTambahPengumumanBinding;
+import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.databinding.FragmentLoginBinding;
 
-public class TambahPengumumanFragment extends Fragment implements View.OnClickListener {
-    private FragmentTambahPengumumanBinding binding;
+public class LoginFragment extends Fragment implements View.OnClickListener {
+    private FragmentLoginBinding binding;
     private FragmentManager fragmentManager;
     private FragmentListener fragmentListener;
 
     //must-have empty constructor
-    public TambahPengumumanFragment(){}
+    public LoginFragment(){}
 
     //singleton
-    public static TambahPengumumanFragment newInstance(){
-        TambahPengumumanFragment fragment = new TambahPengumumanFragment();
+    public static LoginFragment newInstance(){
+        LoginFragment fragment = new LoginFragment();
 
 
         return fragment;
@@ -31,8 +33,10 @@ public class TambahPengumumanFragment extends Fragment implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         // Inflate the Layout for this fragment
-        this.binding = FragmentTambahPengumumanBinding.inflate(inflater, container, false);
+        this.binding = FragmentLoginBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
+
+        this.binding.btnLogin.setOnClickListener(this::onClick);
 
         return view;
     }
@@ -49,6 +53,14 @@ public class TambahPengumumanFragment extends Fragment implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
+        if(PresenterUser.login(this.binding.etEmailLogin.getText().toString())==false){
+            System.out.println("failed");
+        }
+        else{
+            if(v == binding.btnLogin){
+                this.fragmentListener.changePage(2);
+            }
+        }
 
     }
 }

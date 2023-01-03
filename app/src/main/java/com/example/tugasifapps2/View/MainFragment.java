@@ -1,4 +1,4 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,20 +9,20 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.tugasifapps2.databinding.FragmentLandingPageBinding;
+import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.databinding.FragmentMainBinding;
 
-public class LandingPageFragment extends Fragment implements View.OnClickListener {
-    private FragmentLandingPageBinding binding;
+public class MainFragment extends Fragment implements View.OnClickListener {
+    private FragmentMainBinding binding;
     private FragmentManager fragmentManager;
     private FragmentListener fragmentListener;
 
     //must-have empty constructor
-    public LandingPageFragment(){}
+    public MainFragment(){}
 
     //singleton
-    public static LandingPageFragment newInstance(FragmentManager fragmentManager){
-        LandingPageFragment fragment = new LandingPageFragment();
-        fragment.fragmentManager = fragmentManager;
+    public static MainFragment newInstance(){
+        MainFragment fragment = new MainFragment();
 
         return fragment;
     }
@@ -31,10 +31,14 @@ public class LandingPageFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         // Inflate the Layout for this fragment
-        this.binding = FragmentLandingPageBinding.inflate(inflater, container, false);
+        this.binding = FragmentMainBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
 
-        this.binding.btnLoginMain.setOnClickListener(this);
+        this.binding.btnMenuPengumuman.setOnClickListener(this::onClick);
+        this.binding.btnMenuPertemuan.setOnClickListener(this::onClick);
+        this.binding.btnMenuFrs.setOnClickListener(this::onClick);
+        this.binding.btnMenuPengaturan.setOnClickListener(this::onClick);
+
         return view;
     }
 
@@ -50,8 +54,12 @@ public class LandingPageFragment extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        if(v==binding.btnLoginMain) {
-            this.fragmentListener.changePage(1);
+        if(v == binding.btnMenuPengumuman){
+            this.fragmentListener.changePage(3);
+        }else if(v == binding.btnMenuPertemuan){
+            this.fragmentListener.changePage(4);
+        }else if(v == binding.btnMenuFrs){
+            this.fragmentListener.changePage(5);
         }
     }
 }

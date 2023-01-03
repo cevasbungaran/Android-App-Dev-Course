@@ -1,7 +1,6 @@
 package com.example.tugasifapps2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -9,6 +8,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.tugasifapps2.View.FrsFragment;
+import com.example.tugasifapps2.View.JadwalDosenFragment;
+import com.example.tugasifapps2.View.LandingPageFragment;
+import com.example.tugasifapps2.View.LoginFragment;
+import com.example.tugasifapps2.View.MainFragment;
+import com.example.tugasifapps2.View.PengumumanFragment;
+import com.example.tugasifapps2.View.PertemuanFragment;
+import com.example.tugasifapps2.View.TambahPengumumanFragment;
+import com.example.tugasifapps2.View.TambahPertemuanFragment;
 import com.example.tugasifapps2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {

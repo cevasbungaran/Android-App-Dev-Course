@@ -1,4 +1,4 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,19 +9,20 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.tugasifapps2.databinding.FragmentLoginBinding;
+import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.databinding.FragmentPertemuanBinding;
 
-public class LoginFragment extends Fragment implements View.OnClickListener {
-    private FragmentLoginBinding binding;
+public class PertemuanFragment extends Fragment implements View.OnClickListener {
+    private FragmentPertemuanBinding binding;
     private FragmentManager fragmentManager;
     private FragmentListener fragmentListener;
 
     //must-have empty constructor
-    public LoginFragment(){}
+    public PertemuanFragment(){}
 
     //singleton
-    public static LoginFragment newInstance(){
-        LoginFragment fragment = new LoginFragment();
+    public static PertemuanFragment newInstance(){
+        PertemuanFragment fragment = new PertemuanFragment();
 
 
         return fragment;
@@ -31,10 +32,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         // Inflate the Layout for this fragment
-        this.binding = FragmentLoginBinding.inflate(inflater, container, false);
+        this.binding = FragmentPertemuanBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
-
-        this.binding.btnLogin.setOnClickListener(this::onClick);
 
         return view;
     }
@@ -51,9 +50,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v == binding.btnLogin){
-            this.fragmentListener.changePage(2);
-
+        if(v == binding.btnTambahPertemuan){
+            this.fragmentListener.changePage(7);
         }
+
     }
 }

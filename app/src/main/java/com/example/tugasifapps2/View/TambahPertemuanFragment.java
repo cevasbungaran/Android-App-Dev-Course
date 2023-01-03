@@ -1,4 +1,4 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,22 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
-import com.example.tugasifapps2.databinding.FragmentPengumumanBinding;
-import com.example.tugasifapps2.databinding.FragmentPertemuanBinding;
+import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.databinding.FragmentTambahPertemuanBinding;
 
-public class PertemuanFragment extends Fragment implements View.OnClickListener {
-    private FragmentPertemuanBinding binding;
-    private FragmentManager fragmentManager;
+public class TambahPertemuanFragment extends Fragment implements View.OnClickListener {
+    private FragmentTambahPertemuanBinding binding;
     private FragmentListener fragmentListener;
 
-    //must-have empty constructor
-    public PertemuanFragment(){}
+    public TambahPertemuanFragment(){}
 
     //singleton
-    public static PertemuanFragment newInstance(){
-        PertemuanFragment fragment = new PertemuanFragment();
+    public static TambahPertemuanFragment newInstance(){
+        TambahPertemuanFragment fragment = new TambahPertemuanFragment();
 
 
         return fragment;
@@ -32,7 +29,7 @@ public class PertemuanFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         // Inflate the Layout for this fragment
-        this.binding = FragmentPertemuanBinding.inflate(inflater, container, false);
+        this.binding = FragmentTambahPertemuanBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
 
         return view;
@@ -47,12 +44,10 @@ public class PertemuanFragment extends Fragment implements View.OnClickListener 
             throw new ClassCastException(context.toString()+"Must implement fragment listener");
         }
     }
-
     @Override
     public void onClick(View v) {
-        if(v == binding.btnTambahPertemuan){
-            this.fragmentListener.changePage(7);
+        if(v == binding.btnJadwalDosen){
+            this.fragmentListener.changePage(8);
         }
-
     }
 }

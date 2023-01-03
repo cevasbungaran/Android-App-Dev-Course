@@ -1,4 +1,4 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.tugasifapps2.FragmentListener;
 import com.example.tugasifapps2.databinding.FragmentJadwalDosenBinding;
-import com.example.tugasifapps2.databinding.FragmentTambahPertemuanBinding;
 
 public class JadwalDosenFragment extends Fragment implements View.OnClickListener {
     private FragmentJadwalDosenBinding binding;

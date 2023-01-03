@@ -1,4 +1,4 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,20 +9,20 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.tugasifapps2.databinding.FragmentLandingPageBinding;
-import com.example.tugasifapps2.databinding.FragmentPengumumanBinding;
+import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.databinding.FragmentTambahPengumumanBinding;
 
-public class PengumumanFragment extends Fragment implements View.OnClickListener {
-    private FragmentPengumumanBinding binding;
+public class TambahPengumumanFragment extends Fragment implements View.OnClickListener {
+    private FragmentTambahPengumumanBinding binding;
     private FragmentManager fragmentManager;
     private FragmentListener fragmentListener;
 
     //must-have empty constructor
-    public PengumumanFragment(){}
+    public TambahPengumumanFragment(){}
 
     //singleton
-    public static PengumumanFragment newInstance(){
-        PengumumanFragment fragment = new PengumumanFragment();
+    public static TambahPengumumanFragment newInstance(){
+        TambahPengumumanFragment fragment = new TambahPengumumanFragment();
 
 
         return fragment;
@@ -32,7 +32,7 @@ public class PengumumanFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         // Inflate the Layout for this fragment
-        this.binding = FragmentPengumumanBinding.inflate(inflater, container, false);
+        this.binding = FragmentTambahPengumumanBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
 
         return view;
@@ -50,8 +50,6 @@ public class PengumumanFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        if(v == binding.btnNewPengumuman){
-            this.fragmentListener.changePage(6);
-        }
+
     }
 }

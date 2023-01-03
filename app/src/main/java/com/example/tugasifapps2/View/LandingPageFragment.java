@@ -1,4 +1,4 @@
-package com.example.tugasifapps2;
+package com.example.tugasifapps2.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,20 +7,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import com.example.tugasifapps2.databinding.FragmentPengumumanBinding;
-import com.example.tugasifapps2.databinding.FragmentTambahPertemuanBinding;
+import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.databinding.FragmentLandingPageBinding;
 
-public class TambahPertemuanFragment extends Fragment implements View.OnClickListener {
-    private FragmentTambahPertemuanBinding binding;
+public class LandingPageFragment extends Fragment implements View.OnClickListener {
+    private FragmentLandingPageBinding binding;
+    private FragmentManager fragmentManager;
     private FragmentListener fragmentListener;
 
-    public TambahPertemuanFragment(){}
+    //must-have empty constructor
+    public LandingPageFragment(){}
 
     //singleton
-    public static TambahPertemuanFragment newInstance(){
-        TambahPertemuanFragment fragment = new TambahPertemuanFragment();
-
+    public static LandingPageFragment newInstance(FragmentManager fragmentManager){
+        LandingPageFragment fragment = new LandingPageFragment();
+        fragment.fragmentManager = fragmentManager;
 
         return fragment;
     }
@@ -29,9 +32,10 @@ public class TambahPertemuanFragment extends Fragment implements View.OnClickLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         // Inflate the Layout for this fragment
-        this.binding = FragmentTambahPertemuanBinding.inflate(inflater, container, false);
+        this.binding = FragmentLandingPageBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
 
+        this.binding.btnLoginMain.setOnClickListener(this);
         return view;
     }
 
@@ -44,10 +48,11 @@ public class TambahPertemuanFragment extends Fragment implements View.OnClickLis
             throw new ClassCastException(context.toString()+"Must implement fragment listener");
         }
     }
+
     @Override
     public void onClick(View v) {
-        if(v == binding.btnJadwalDosen){
-            this.fragmentListener.changePage(8);
+        if(v==binding.btnLoginMain) {
+            this.fragmentListener.changePage(1);
         }
     }
 }
