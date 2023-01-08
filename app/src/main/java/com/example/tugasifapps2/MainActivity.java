@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.tugasifapps2.Adapter.PertemuanListAdapter;
+import com.example.tugasifapps2.Model.Pertemuan;
+import com.example.tugasifapps2.Presenter.PresenterPertemuan;
 import com.example.tugasifapps2.View.FrsFragment;
 import com.example.tugasifapps2.View.JadwalDosenFragment;
 import com.example.tugasifapps2.View.LandingPageFragment;
@@ -18,6 +21,10 @@ import com.example.tugasifapps2.View.PertemuanFragment;
 import com.example.tugasifapps2.View.TambahPengumumanFragment;
 import com.example.tugasifapps2.View.TambahPertemuanFragment;
 import com.example.tugasifapps2.databinding.ActivityMainBinding;
+
+import  com.example.tugasifapps2.WebService.fetchData;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private ActivityMainBinding binding;
@@ -34,12 +41,18 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected FragmentManager fragmentManager;
     protected FragmentTransaction ft;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        fetchData process = new fetchData();
+        process.execute();
+
+
 
         //inisiasi fragments
         this.landingPageFragment = LandingPageFragment.newInstance(this.getSupportFragmentManager());

@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(PresenterUser.login(this.binding.etEmailLogin.getText().toString())==false){
+        if(PresenterUser.login(this.binding.etEmailLogin.getText().toString(),this.binding.radioGroup.getCheckedRadioButtonId())==false){
             System.out.println("failed");
         }
         else{
@@ -64,3 +64,5 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     }
 }
+
+//&& this.binding.radioGroup.getCheckedRadioButtonId() == -1

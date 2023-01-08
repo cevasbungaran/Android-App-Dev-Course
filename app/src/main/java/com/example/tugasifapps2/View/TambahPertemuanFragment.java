@@ -32,6 +32,9 @@ public class TambahPertemuanFragment extends Fragment implements View.OnClickLis
         this.binding = FragmentTambahPertemuanBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
 
+        this.binding.btnJadwalDosen.setOnClickListener(this::onClick);
+        this.binding.btnSimpanPertemuan.setOnClickListener(this::onClick);
+
         return view;
     }
 

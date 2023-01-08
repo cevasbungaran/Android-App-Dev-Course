@@ -20,7 +20,6 @@
         android:layout_marginTop="50dp"
         android:layout_below="@+id/logo_if"/>
 
-
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,7 +72,6 @@
         android:backgroundTint="@color/biruIF"
         android:textColor="@color/birutuaIF"
         android:layout_centerInParent="true"
-        android:layout_gravity="center"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

@@ -38,7 +38,7 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
             int s=0;
             while ((output = in.readLine()) != null) {
                 response.append(output);
-            }
+             }
             String hasil=response.toString();
             JSONArray array = new JSONArray(hasil);
 
