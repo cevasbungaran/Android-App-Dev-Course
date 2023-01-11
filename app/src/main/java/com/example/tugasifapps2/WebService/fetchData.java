@@ -29,7 +29,7 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
         try {
             URL url = new URL("https://ifportal.labftis.net/api/v1/users");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestProperty("Authorization","Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOiJjNTQ5ZTMxNC03M2RiLTRhZGYtOGVmNy04MmMxYmY4OWE1MjciLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNjcxNTIyNTMzfQ.4Li51WCi6jYRxwKzmPipNe7ayd3ZwGz8x1OT9vcC4vs");
+            con.setRequestProperty("Authorization","Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOiI2ZTY2ODZmMC0yOTZlLTRjNzItOGE0NS1hNmFjMWVkNDhlNDQiLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNjczNDE4MzU1fQ.3morsNHLeMMlUnE0DDApqffxhkvk-lN04QXIyCP4m0E");
             con.setRequestMethod("GET");
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String output;
@@ -45,16 +45,15 @@ public class fetchData extends AsyncTask<Void,Void,Void> {
             in.close();
             // printing result from response
             System.out.println(array);
-
-            PresenterUser pu= new PresenterUser();
-            for (int i = 0; i < array.length(); i++){
-                JSONObject object = array.getJSONObject(i);
-                System.out.println(object.getString("name").toString());
-                System.out.println(object.getString("email").toString());
-                System.out.println(object.getString("roles").toString());
-                pu.addToList(object.getString("id").toString(),object.getString("name").toString(),object.getString("email").toString(),object.getString("archived_at").toString(),object.getString("roles").toString());
-            }
-
+//
+//            PresenterUser pu= new PresenterUser();
+//            for (int i = 0; i < array.length(); i++){
+//                JSONObject object = array.getJSONObject(i);
+//                System.out.println(object.getString("name").toString());
+//                System.out.println(object.getString("email").toString());
+//                System.out.println(object.getString("roles").toString());
+//                pu.addToList(object.getString("id").toString(),object.getString("name").toString(),object.getString("email").toString(),object.getString("archived_at").toString(),object.getString("roles").toString());
+//            }
 
 
 

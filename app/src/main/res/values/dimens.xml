@@ -2,7 +2,7 @@
 <resources>
     <dimen name="size_title">30sp</dimen>
     <dimen name="size_form">20sp</dimen>
-    <dimen name="margin">25sp</dimen>
+    <dimen name="margin">16dp</dimen>
     <dimen name="margin_form">35sp</dimen>
     <dimen name="btn_list_dokter">50dp</dimen>
     <dimen name="margin_list_dokter">50dp</dimen>
