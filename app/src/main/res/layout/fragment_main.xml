@@ -63,6 +63,17 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="@dimen/btn_size_main_fragment_width"
+            android:layout_height="@dimen/btn_size_main_fragment_height"
+            android:text="@string/signout_title"
+            android:layout_marginLeft="@dimen/margin_btn_main_fragment"
+            android:backgroundTint="@color/biruIF"
+            android:layout_gravity="center"
+            android:textColor="@color/birutuaIF"/>
+
+
     </LinearLayout>
 
 </RelativeLayout>

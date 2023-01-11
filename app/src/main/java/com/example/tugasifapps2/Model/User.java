@@ -1,15 +1,16 @@
 package com.example.tugasifapps2.Model;
 
 import java.lang.reflect.Array;
+import java.util.List;
 
 public class User {
     private String id;
     private String name;
     private String email;
     private String archivedAt;
-    private String roles;
+    private List<String> roles;
 
-    public User( String id, String name, String email, String archived_at, String roles){
+    public User( String id, String name, String email, String archived_at, List<String> roles){
         this.id = id;
         this.name = name;
         this.email = email;
@@ -33,7 +34,7 @@ public class User {
         return archivedAt;
     }
 
-    public String getRoles() {
+    public List<String> getRoles() {
         return roles;
     }
 
@@ -53,7 +54,7 @@ public class User {
         this.archivedAt = archivedAt;
     }
 
-    public void setRoles(String roles) {
+    public void setRoles(List<String> roles) {
         this.roles = roles;
     }
 }

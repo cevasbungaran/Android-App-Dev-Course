@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -47,6 +48,18 @@ public class LandingPageFragment extends Fragment implements View.OnClickListene
         else{
             throw new ClassCastException(context.toString()+"Must implement fragment listener");
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //https://stackoverflow.com/questions/60885450/how-close-app-when-onbackpress-in-homefragment
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                getActivity().finishAffinity();
+            }
+        });
     }
 
     @Override

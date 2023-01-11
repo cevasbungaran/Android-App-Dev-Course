@@ -36,11 +36,14 @@
         android:textSize="@dimen/size_form"
         android:layout_below="@+id/et_tambah_pengumuman"/>
 
-    <EditText
+
+    <Spinner
+        android:id="@+id/spinner_tags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_tags_pengumuman"
-        android:layout_below="@id/tv_tags_pengumuman"/>
+        android:background="@android:drawable/btn_dropdown"
+        android:layout_below="@id/tv_tags_pengumuman"
+        android:spinnerMode="dropdown"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +51,7 @@
         android:id="@+id/tv_deskripsi_pertemuan"
         android:text="@string/tv_deskripsi_pertemuan"
         android:textSize="@dimen/size_form"
-        android:layout_below="@+id/et_tags_pengumuman"/>
+        android:layout_below="@+id/spinner_tags"/>
 
     <EditText
         android:layout_width="match_parent"

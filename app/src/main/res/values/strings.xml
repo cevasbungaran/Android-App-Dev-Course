@@ -52,4 +52,6 @@
     <string name="fragment_tambah_matkul_title">Tambah</string>
     <string name="fragment_tambah_matkul_prasyarat">Prasyarat</string>
     <string name="fragment_tambah_matkul_btn_ambil">Ambil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -6,17 +6,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.tugasifapps2.FragmentListener;
+import com.example.tugasifapps2.WebService.LocalAuth;
 import com.example.tugasifapps2.databinding.FragmentLoginBinding;
 
-public class LoginFragment extends Fragment implements View.OnClickListener {
+public class LoginFragment extends Fragment implements View.OnClickListener, PresenterUser.PresenterCallback {
     private FragmentLoginBinding binding;
     private FragmentManager fragmentManager;
     private FragmentListener fragmentListener;
+    private PresenterUser presenter;
 
     //must-have empty constructor
     public LoginFragment(){}
@@ -41,6 +46,12 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        presenter = new PresenterUser(getContext());
+    }
+
     public void onAttach(Context context){
         super.onAttach(context);
         if(context instanceof FragmentListener){
@@ -53,15 +64,32 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(PresenterUser.login(this.binding.etEmailLogin.getText().toString(),this.binding.radioGroup.getCheckedRadioButtonId())==false){
-            System.out.println("failed");
-        }
-        else{
-            if(v == binding.btnLogin){
-                this.fragmentListener.changePage(2);
-            }
-        }
+        presenter.login(
+                this.binding.etEmailLogin.getText().toString(),
+                this.binding.etPassword.getText().toString(),
+                this
+        );
+    }
 
+    @Override
+    public void loginSuccess(String result) {
+        Toast.makeText(getActivity().getApplicationContext(),
+                "login success " +
+                        result,
+                Toast.LENGTH_LONG).show();
+
+        //save token in shared pref
+        LocalAuth auth = new LocalAuth(getContext());
+        auth.setAuthToken(result);
+
+        this.fragmentListener.changePage(2);
+    }
+
+    @Override
+    public void loginError(String result) {
+        Toast.makeText(getActivity().getApplicationContext(),
+                "login error ",
+                Toast.LENGTH_LONG).show();
     }
 }
 
