@@ -8,23 +8,26 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.tugasifapps2.Adapter.PertemuanListAdapter;
-import com.example.tugasifapps2.Model.Pertemuan;
-import com.example.tugasifapps2.Presenter.PresenterPertemuan;
+import com.example.tugasifapps2.Model.User;
 import com.example.tugasifapps2.View.FrsFragment;
 import com.example.tugasifapps2.View.JadwalDosenFragment;
 import com.example.tugasifapps2.View.LandingPageFragment;
 import com.example.tugasifapps2.View.LoginFragment;
 import com.example.tugasifapps2.View.MainFragment;
+import com.example.tugasifapps2.View.PengumumanDetailFragment;
 import com.example.tugasifapps2.View.PengumumanFragment;
 import com.example.tugasifapps2.View.PertemuanFragment;
 import com.example.tugasifapps2.View.TambahPengumumanFragment;
 import com.example.tugasifapps2.View.TambahPertemuanFragment;
+import com.example.tugasifapps2.WebService.API;
+import com.example.tugasifapps2.WebService.RetrofitInstance;
 import com.example.tugasifapps2.databinding.ActivityMainBinding;
 
-import  com.example.tugasifapps2.WebService.fetchData;
-
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
     private ActivityMainBinding binding;
@@ -49,10 +52,31 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         View view = binding.getRoot();
         setContentView(view);
 
-        fetchData process = new fetchData();
-        process.execute();
+//        fetchData process = new fetchData();
+//        process.execute();
 
+        API api = new RetrofitInstance().getRetrofitInstance();
+        Call<List<User>> call = api.getAllUsers();
 
+        call.enqueue(new Callback<List<User>>() {
+            @Override
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                if (response.isSuccessful()) {
+                    // Do something with the response
+                    List<User> movieDetail = response.body();
+                    Log.e("hehe","berhasil");
+                } else {
+                    Log.e("hehe","gagal");
+                    // Handle error case
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<User>> call, Throwable t) {
+                // Handle failure
+                Log.e("hehe","fail");
+            }
+        });
 
         //inisiasi fragments
         this.landingPageFragment = LandingPageFragment.newInstance(this.getSupportFragmentManager());
@@ -72,6 +96,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.ft.add(binding.fragmentContainer.getId(), this.landingPageFragment).addToBackStack(null).commit();
     }
 
+    public void goToPengumumanDetail(String announcementId) {
+        ft = this.fragmentManager.beginTransaction();
+        ft.replace(R.id.fragment_container,
+                PengumumanDetailFragment.newInstance(announcementId))
+                .addToBackStack(null);
+
+        this.ft.commit();
+        binding.drawerLayout.closeDrawers();
+    }
+
     public void changePage(int page) {
         ft = this.fragmentManager.beginTransaction();
 
@@ -88,6 +122,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             ft.replace(R.id.fragment_container, this.pertemuanFragment).addToBackStack(null);
         } else if (page == 5) {
             ft.replace(R.id.fragment_container, this.frsFragment).addToBackStack(null);
+        } else if (page == 6) {
+            ft.replace(R.id.fragment_container, this.tambahPengumumanFragment).addToBackStack(null);
         }  else if (page == 7) {
             ft.replace(R.id.fragment_container, this.tambahPertemuanFragment).addToBackStack(null);
         } else if (page == 8) {
